@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Campus Issue & Resource Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+
+        <div class="logo-section">
+            <div class="logo">SC</div>
+
+            <div>
+                <h2>Smart Campus</h2>
+                <p>Issue & Resource Management</p>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#roles">User Roles</a>
+            <a href="#resources">Resources</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="login-button" onclick="showLoginMessage()">
+            Login
+        </button>
+
+    </header>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <span class="course-tag">
+                CS3301 - FULL STACK DEVELOPMENT
+            </span>
+
+            <h1>
+                SMART CAMPUS
+                <br>
+                ISSUE & RESOURCE
+                <br>
+                MANAGEMENT SYSTEM
+            </h1>
+
+            <p>
+                A digital platform for reporting campus issues,
+                tracking their resolution, and managing campus
+                resources efficiently.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button
+                    class="primary-button"
+                    onclick="scrollToSection('features')">
+                    Explore System
+                </button>
+
+                <button
+                    class="secondary-button"
+                    onclick="showIssueMessage()">
+                    Report an Issue
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about-section">
+
+        <h2>About the System</h2>
+
+        <p>
+            The Smart Campus Issue & Resource Management System
+            provides a centralized platform for students, faculty,
+            and administrators to report, track, and manage
+            campus-related issues and resources.
+        </p>
+
+    </section>
+
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+
+        <h2 class="section-title">
+            Key Features
+        </h2>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <div class="feature-icon">📝</div>
+                <h3>Report Issues</h3>
+                <p>
+                    Students and faculty can report problems
+                    related to classrooms, infrastructure,
+                    facilities, and other campus services.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Track Issues</h3>
+                <p>
+                    Users can monitor the status of reported
+                    issues from submission to resolution.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Role-Based Access</h3>
+                <p>
+                    Different views and functions are provided
+                    for students, faculty, and administrators.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="feature-icon">📦</div>
+                <h3>Resource Management</h3>
+                <p>
+                    Campus resources can be organized,
+                    monitored, and managed efficiently.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- User Roles -->
+    <section id="roles" class="roles-section">
+
+        <h2 class="section-title">
+            Choose Your Portal
+        </h2>
+
+        <div class="roles-grid">
+
+            <!-- Student -->
+            <div class="role-card student-card">
+
+                <div class="role-icon">🎓</div>
+
+                <h3>Student Portal</h3>
+
+                <ul>
+                    <li>Report Campus Issues</li>
+                    <li>Track Reported Issues</li>
+                    <li>View Campus Resources</li>
+                    <li>Check Announcements</li>
+                </ul>
+
+                <button
+                    onclick="selectPortal('Student')">
+                    Access Student View
+                </button>
+
+            </div>
+
+
+            <!-- Faculty -->
+            <div class="role-card faculty-card">
+
+                <div class="role-icon">👨‍🏫</div>
+
+                <h3>Faculty Portal</h3>
+
+                <ul>
+                    <li>Report Campus Issues</li>
+                    <li>Monitor Issue Status</li>
+                    <li>Manage Assigned Tasks</li>
+                    <li>View Available Resources</li>
+                </ul>
+
+                <button
+                    onclick="selectPortal('Faculty')">
+                    Access Faculty View
+                </button>
+
+            </div>
+
+
+            <!-- Admin -->
+            <div class="role-card admin-card">
+
+                <div class="role-icon">🛡️</div>
+
+                <h3>Admin Portal</h3>
+
+                <ul>
+                    <li>Manage Users</li>
+                    <li>Manage Campus Issues</li>
+                    <li>Manage Resources</li>
+                    <li>View System Reports</li>
+                </ul>
+
+                <button
+                    onclick="selectPortal('Admin')">
+                    Access Admin View
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Resources Section -->
+    <section id="resources" class="section resources-section">
+
+        <h2 class="section-title">
+            Campus Resources
+        </h2>
+
+        <div class="resource-grid">
+
+            <div class="resource-card">
+                <h3>🏫 Classrooms</h3>
+                <p>View classroom availability and information.</p>
+            </div>
+
+            <div class="resource-card">
+                <h3>💻 Computer Labs</h3>
+                <p>Access information about available computer labs.</p>
+            </div>
+
+            <div class="resource-card">
+                <h3>📚 Library</h3>
+                <p>View library facilities and available resources.</p>
+            </div>
+
+            <div class="resource-card">
+                <h3>⚽ Sports Facilities</h3>
+                <p>View campus sports facilities and availability.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JavaScript Interaction Section -->
+    <section class="interaction-section">
+
+        <h2>Quick Issue Report</h2>
+
+        <p>
+            Demonstration of JavaScript event handling and DOM
+            manipulation.
+        </p>
+
+        <div class="issue-form">
+
+            <input
+                type="text"
+                id="issueInput"
+                placeholder="Enter a campus issue">
+
+            <button onclick="addIssue()">
+                Submit Issue
+            </button>
+
+        </div>
+
+        <p id="issueMessage"></p>
+
+        <div id="issueList"></div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="contact-section">
+
+        <h2>Smart Campus Support</h2>
+
+        <p>
+            A centralized digital platform for a smarter and
+            better-connected campus.
+        </p>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            Smart Campus Issue & Resource Management System
+        </p>
+
+        <p>
+            CS3301 Full Stack Development | CIE-1
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
