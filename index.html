@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +13,7 @@
 
 <body>
 
-    <!-- Header -->
+    <!-- HEADER -->
     <header class="header">
 
         <div class="logo-section">
@@ -28,6 +30,7 @@
             <a href="#features">Features</a>
             <a href="#roles">User Roles</a>
             <a href="#resources">Resources</a>
+            <a href="#issues">Report Issue</a>
             <a href="#contact">Contact</a>
         </nav>
 
@@ -38,7 +41,7 @@
     </header>
 
 
-    <!-- Hero Section -->
+    <!-- HOME -->
     <section id="home" class="hero">
 
         <div class="hero-content">
@@ -63,14 +66,12 @@
 
             <div class="hero-buttons">
 
-                <button
-                    class="primary-button"
+                <button class="primary-button"
                     onclick="scrollToSection('features')">
                     Explore System
                 </button>
 
-                <button
-                    class="secondary-button"
+                <button class="secondary-button"
                     onclick="showIssueMessage()">
                     Report an Issue
                 </button>
@@ -82,7 +83,7 @@
     </section>
 
 
-    <!-- About Section -->
+    <!-- ABOUT -->
     <section class="about-section">
 
         <h2>About the System</h2>
@@ -97,12 +98,10 @@
     </section>
 
 
-    <!-- Features Section -->
+    <!-- FEATURES -->
     <section id="features" class="section">
 
-        <h2 class="section-title">
-            Key Features
-        </h2>
+        <h2 class="section-title">Key Features</h2>
 
         <div class="feature-grid">
 
@@ -112,37 +111,34 @@
                 <p>
                     Students and faculty can report problems
                     related to classrooms, infrastructure,
-                    facilities, and other campus services.
+                    facilities, and campus services.
                 </p>
             </div>
-
 
             <div class="feature-card">
                 <div class="feature-icon">📊</div>
                 <h3>Track Issues</h3>
                 <p>
-                    Users can monitor the status of reported
-                    issues from submission to resolution.
+                    Monitor the status of reported issues
+                    from submission to resolution.
                 </p>
             </div>
-
 
             <div class="feature-card">
                 <div class="feature-icon">👥</div>
                 <h3>Role-Based Access</h3>
                 <p>
-                    Different views and functions are provided
-                    for students, faculty, and administrators.
+                    Separate portal views for students,
+                    faculty, and administrators.
                 </p>
             </div>
-
 
             <div class="feature-card">
                 <div class="feature-icon">📦</div>
                 <h3>Resource Management</h3>
                 <p>
-                    Campus resources can be organized,
-                    monitored, and managed efficiently.
+                    Search and view information about
+                    available campus facilities.
                 </p>
             </div>
 
@@ -151,16 +147,13 @@
     </section>
 
 
-    <!-- User Roles -->
+    <!-- USER ROLES -->
     <section id="roles" class="roles-section">
 
-        <h2 class="section-title">
-            Choose Your Portal
-        </h2>
+        <h2 class="section-title">Choose Your Portal</h2>
 
         <div class="roles-grid">
 
-            <!-- Student -->
             <div class="role-card student-card">
 
                 <div class="role-icon">🎓</div>
@@ -174,15 +167,13 @@
                     <li>Check Announcements</li>
                 </ul>
 
-                <button
-                    onclick="selectPortal('Student')">
+                <button onclick="selectPortal('Student')">
                     Access Student View
                 </button>
 
             </div>
 
 
-            <!-- Faculty -->
             <div class="role-card faculty-card">
 
                 <div class="role-icon">👨‍🏫</div>
@@ -192,19 +183,17 @@
                 <ul>
                     <li>Report Campus Issues</li>
                     <li>Monitor Issue Status</li>
-                    <li>Manage Assigned Tasks</li>
+                    <li>View Reported Issues</li>
                     <li>View Available Resources</li>
                 </ul>
 
-                <button
-                    onclick="selectPortal('Faculty')">
+                <button onclick="selectPortal('Faculty')">
                     Access Faculty View
                 </button>
 
             </div>
 
 
-            <!-- Admin -->
             <div class="role-card admin-card">
 
                 <div class="role-icon">🛡️</div>
@@ -212,14 +201,13 @@
                 <h3>Admin Portal</h3>
 
                 <ul>
-                    <li>Manage Users</li>
-                    <li>Manage Campus Issues</li>
+                    <li>View All Issues</li>
+                    <li>Update Issue Status</li>
                     <li>Manage Resources</li>
-                    <li>View System Reports</li>
+                    <li>View Dashboard Statistics</li>
                 </ul>
 
-                <button
-                    onclick="selectPortal('Admin')">
+                <button onclick="selectPortal('Admin')">
                     Access Admin View
                 </button>
 
@@ -230,33 +218,35 @@
     </section>
 
 
-    <!-- Resources Section -->
-    <section id="resources" class="section resources-section">
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="dashboard-section">
 
-        <h2 class="section-title">
-            Campus Resources
-        </h2>
+        <h2 class="section-title">Campus Dashboard</h2>
 
-        <div class="resource-grid">
+        <p id="portalMessage">
+            Welcome to the Smart Campus Dashboard.
+        </p>
 
-            <div class="resource-card">
-                <h3>🏫 Classrooms</h3>
-                <p>View classroom availability and information.</p>
+        <div class="dashboard-grid">
+
+            <div class="dashboard-card">
+                <h3>Total Issues</h3>
+                <p id="totalIssues">0</p>
             </div>
 
-            <div class="resource-card">
-                <h3>💻 Computer Labs</h3>
-                <p>Access information about available computer labs.</p>
+            <div class="dashboard-card">
+                <h3>Pending</h3>
+                <p id="pendingIssues">0</p>
             </div>
 
-            <div class="resource-card">
-                <h3>📚 Library</h3>
-                <p>View library facilities and available resources.</p>
+            <div class="dashboard-card">
+                <h3>In Progress</h3>
+                <p id="progressIssues">0</p>
             </div>
 
-            <div class="resource-card">
-                <h3>⚽ Sports Facilities</h3>
-                <p>View campus sports facilities and availability.</p>
+            <div class="dashboard-card">
+                <h3>Resolved</h3>
+                <p id="resolvedIssues">0</p>
             </div>
 
         </div>
@@ -264,22 +254,87 @@
     </section>
 
 
-    <!-- JavaScript Interaction Section -->
-    <section class="interaction-section">
+    <!-- CAMPUS RESOURCES -->
+    <section id="resources" class="section resources-section">
 
-        <h2>Quick Issue Report</h2>
+        <h2 class="section-title">Campus Resources</h2>
+
+        <div class="resource-search">
+
+            <input
+                type="text"
+                id="resourceSearch"
+                placeholder="Search classrooms, labs, library..."
+                oninput="searchResources()">
+
+        </div>
+
+        <div class="resource-grid" id="resourceGrid">
+
+            <div class="resource-card" data-name="classrooms">
+                <h3>🏫 Classrooms</h3>
+                <p>View classroom availability and information.</p>
+            </div>
+
+            <div class="resource-card" data-name="computer labs">
+                <h3>💻 Computer Labs</h3>
+                <p>Access information about available computer labs.</p>
+            </div>
+
+            <div class="resource-card" data-name="library">
+                <h3>📚 Library</h3>
+                <p>View library facilities and available resources.</p>
+            </div>
+
+            <div class="resource-card" data-name="sports facilities">
+                <h3>⚽ Sports Facilities</h3>
+                <p>View campus sports facilities and availability.</p>
+            </div>
+
+        </div>
+
+        <p id="resourceMessage"></p>
+
+    </section>
+
+
+    <!-- ISSUE REPORTING -->
+    <section id="issues" class="interaction-section">
+
+        <h2>Report a Campus Issue</h2>
 
         <p>
-            Demonstration of JavaScript event handling and DOM
-            manipulation.
+            Submit campus-related problems and track their
+            progress through the system.
         </p>
 
         <div class="issue-form">
 
             <input
                 type="text"
-                id="issueInput"
-                placeholder="Enter a campus issue">
+                id="issueTitle"
+                placeholder="Enter issue title">
+
+            <select id="issueCategory">
+                <option value="">Select Category</option>
+                <option value="Classroom">Classroom</option>
+                <option value="Infrastructure">Infrastructure</option>
+                <option value="Computer Lab">Computer Lab</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Water">Water</option>
+                <option value="Sports Facility">Sports Facility</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <input
+                type="text"
+                id="issueLocation"
+                placeholder="Enter campus location">
+
+            <textarea
+                id="issueDescription"
+                placeholder="Describe the issue..."
+                rows="4"></textarea>
 
             <button onclick="addIssue()">
                 Submit Issue
@@ -289,12 +344,28 @@
 
         <p id="issueMessage"></p>
 
-        <div id="issueList"></div>
+    </section>
+
+
+    <!-- ISSUE TRACKING -->
+    <section class="tracking-section">
+
+        <h2 class="section-title">Track Reported Issues</h2>
+
+        <p>
+            View submitted issues and check their current status.
+        </p>
+
+        <div class="issue-list" id="issueList">
+
+            <p id="emptyMessage">No issues reported yet.</p>
+
+        </div>
 
     </section>
 
 
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section id="contact" class="contact-section">
 
         <h2>Smart Campus Support</h2>
@@ -307,7 +378,7 @@
     </section>
 
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
 
         <p>
@@ -324,4 +395,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
